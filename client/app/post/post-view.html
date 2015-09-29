@@ -1,0 +1,33 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<article>
+	<header>
+		<div class="container">
+			<h1>{{post.title}}</h1>
+			<!-- div class="pull-right">
+				<img ng-click="facebook(post)" src="/assets/images/facebook.png" alt="Send to Facebook">
+			</div -->
+		</div>
+	</header>
+	<div class="container">
+		<p>{{post.content}}</p>
+	</div>
+	<hr>
+	<footer>
+		<div class="container">
+			<button type="button" class="btn btn-facebook" ng-click="facebook(post)"><i class="fa fa-facebook"></i> Share on Facebook</button>
+			<button type="button" class="btn btn-twitter" ng-click="twitter(post)"><i class="fa fa-twitter"></i> Share on Twitter</button>
+			<div class="btn-group pull-right" ng-show="isAdmin() || isMyPost()">
+				<a type="button" class="btn btn-primary" ng-href="/post/{{post._id}}/edit">Edit</a>
+				<button type="button" class="btn btn-primary" ng-click="removePost()">Delete</button>
+			</div>
+		</div>
+		<!-- div class="container">
+			<textarea ng-model="newComment" placeholder="Add comment"></textarea>
+			<button type="button">Add</button>
+		</div>
+		<div ng-repeat="comment in comments">
+			<p>{{comment.content}}</p>
+		</div -->
+	</footer>
+</article>

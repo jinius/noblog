@@ -1,0 +1,18 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<section>
+	<header>
+		<div class="container">
+			<a ng-href="/post/new" class="btn btn-primary pull-right">New Post</a>
+		</div>
+	</header>
+	<br>
+	<div class="container">
+		<ul class="list-group">
+			<a class="list-group-item" ng-repeat="post in posts | reverse" ng-href="/post/{{post._id}}">
+				<b class="list-group-item-heading">{{post.title}}</b>
+				<small class="list-group-item-text time pull-right">{{post._id | idToTime}}</small>
+			</a>
+		</ul>
+	</div>
+</section>

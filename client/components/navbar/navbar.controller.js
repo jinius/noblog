@@ -5,7 +5,13 @@ angular.module('noblogApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    }, {
+		'title': 'Post',
+		'link': '/post'
+	}, {
+		'title': 'Group',
+		'link': '/group'
+	}];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
