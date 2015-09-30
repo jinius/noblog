@@ -46,7 +46,7 @@ module.exports = function(app) {
   
   if ('production' === env) {
     app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
-    app.use(express.static(path.join(config.root, 'public')));
+    app.use(express.static(path.join(config.root, 'public'), { maxAge: 86400000 }));
     app.set('appPath', path.join(config.root, 'public'));
     app.use(morgan('dev'));
   }
